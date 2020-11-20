@@ -6,7 +6,7 @@ class CSVOperator:
     def add_block(self, block):
 
         """
-        method to add a block to the blockchain
+        method to add a block to the blockchain, 
         """
 
         with open("storage/blockchain.csv", 'a+', newline='') as blockchain:

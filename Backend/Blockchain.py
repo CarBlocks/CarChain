@@ -42,6 +42,11 @@ class Blockchain:
     
                         
     def mine_block(self, block_type, block_data):
+
+        """
+        requires block_type to be string
+        block_data has to be provided inside a list
+        """
         
         client = DBConnect()
         
@@ -149,3 +154,6 @@ class Blockchain:
         else:
 
             return False
+
+
+        
