@@ -1,13 +1,13 @@
 import hashlib
 import json
 from DBConnect import DBConnect
-from csvOperator import csvOperator
+from CSVOperator import CSVOperator
 
 class Blockchain:
     
     def __init__(self):
 
-        self.csv_operator = csvOperator()
+        self.csv_operator = CSVOperator()
         
     def get_hash(self, block):
         

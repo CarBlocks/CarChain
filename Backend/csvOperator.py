@@ -1,7 +1,7 @@
 import json
 import csv
 
-class csvOperator:
+class CSVOperator:
 
     def add_block(self, block):
 
