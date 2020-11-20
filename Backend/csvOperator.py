@@ -1,36 +1,42 @@
+import json
 import csv
 
-
-
-
-"""
-could also use DictWriter - might be more straightforward
-
-"""
-
-
-class CSV:
-
-    def __init__(self):
-
-        pass
-
+class csvOperator:
 
     def add_block(self, block):
 
+        """
+        method to add a block to the blockchain
+        """
+
         with open("storage/blockchain.csv", 'a+', newline='') as blockchain:
-            fieldnames = ["_id","car_id","nonce","car_hash","block_hash","details"]
-            csv_writer = csv.DictWriter(blockchain, fieldnames=fieldnames)
-            csv_writer.writeheader()
-            csv_writer.writerow(block)
+            fieldnames = ['_id', 'car_id', 'nonce', 'car_hash', 'block_hash', 'details']
+            writer = csv.DictWriter(blockchain, fieldnames=fieldnames)
+            writer.writerow(block)
 
 
-    def add_adress(self, address):
+    def add_address(self, address):
 
-        with open("storage/adresses.csv", "'a+', newline=''") as adresses:
+        """
+        method to add an address 
+        """
+
+        with open("storage/adresses.csv", 'a+', newline='') as adresses:
             csv_writer = csv.writer(adresses)
             csv_writer.writerow("adress")
+            
+    def get_entries(self, _ids):
 
+        """
+        method to get all entries on the blockchain with a correspondinh car_id
+        """
+        
+        
+        with open("storage/blockchain.csv") as blockchain:
+
+            csv_reader = csv.DictReader(blockchain)
+            return [dict(row) for row in csv_reader if dict(row)["_id"] in _ids]
+        
 
     def read_chain(self):
 
@@ -47,23 +53,23 @@ class CSV:
                 next(current_blocks)
 
                 for previous_block, current_block in zip(previous_blocks, current_blocks):
-        	        yield dict(previous_block), dict(current_block)
+                    yield dict(previous_block), dict(current_block)
 
     def get_last_block(self):
 
         """
-        this should be done in a more efficent way
+        get the last entry on the blockchain
         """
 
         with open("storage/blockchain.csv") as blockchain:
 
-            csv_reader = csv.DictReader(blockchain)
+            reader = csv.DictReader(blockchain)
         
             for _ in range(1,self.get_chain_length()):
 
-                next(csv_reader)
+                next(reader)
 
-            return dict([row for row in csv_reader][0])
+            return dict([row for row in reader][0])
         
 
     def read_adresses(self):
@@ -86,18 +92,7 @@ class CSV:
 
             csv_reader = csv.DictReader(blockchain)
             return sum(1 for row in csv_reader)
-
-
-block = {"_id":0, 
-        "car_id":"None",
-        "nonce":0,
-        "car_hash":"None",
-        "block_hash":"None",
-        "details": "Sale "}  
-
-test = CSV()
-test.add_block(block)
-
+        
 
 
 

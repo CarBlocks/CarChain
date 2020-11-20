@@ -33,6 +33,12 @@ class DBConnect:
         
         error handling for unknown key is still missing
         """
-        return sorted([item for item in self.storage.find({"car_id":car_id})], key = lambda i: i["_id"])
+        car_history = sorted([item for item in self.storage.find({"car_id":car_id})], key = lambda i: i["_id"])
         
-        
+        # make sure all values in dicts are strings. Then it can be compared to what is read from csv
+        for stage in car_history:
+            stage["nonce"] = str(stage["nonce"])
+            stage["_id"] = str(stage["_id"])
+            
+        return car_history
+    
