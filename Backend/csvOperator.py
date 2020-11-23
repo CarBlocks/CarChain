@@ -86,6 +86,15 @@ class CSVOperator:
                 yield row
 
 
+    def read_server_details(self):
+
+        """
+        method to read server details
+        """
+
+        pass
+
+
     def get_chain_length(self):
 
         with open("storage/blockchain.csv") as blockchain:

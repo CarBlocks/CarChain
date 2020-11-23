@@ -1,4 +1,5 @@
 import socket
+import threading
 import csv
 from Blockchain import Blockchain
 
@@ -45,8 +46,6 @@ class P2P:
         the valid version of the blockchain has to be queried and if necessary 
         replaced. 
         the adresses have to be kept up to date.
-
-
         """
 
         pass
