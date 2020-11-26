@@ -1,6 +1,3 @@
 # CarChain
 
-Blockchain application to track the repair and sale history of cars. 
-
-
-
+Blockchain application to track the repair and sale history of cars.
