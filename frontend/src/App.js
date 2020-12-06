@@ -76,6 +76,7 @@ const App = () => {
 
   const classes = useStyles();
   const handleClick = () => {
+    // todo 
 
   }
 
@@ -118,9 +119,6 @@ const App = () => {
                     </Button>
                   </Grid>
                   <Grid item>
-                    {/* <Button variant="outlined" color="primary">
-                      Secondary action
-                    </Button> */}
                   </Grid>
                 </Grid>
               </div>
@@ -149,9 +147,6 @@ const App = () => {
                       <Button size="small" color="primary">
                         View
                       </Button>
-                      {/* <Button size="small" color="primary">
-                        Edit
-                      </Button> */}
                     </CardActions>
                   </Card>
                 </Grid>
