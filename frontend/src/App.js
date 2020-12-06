@@ -1,5 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import CarIcon from '@material-ui/icons/DriveEta';
 import Card from '@material-ui/core/Card';
@@ -8,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import BurgerMenu from './components/Menu/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
+  appName: {
+    width:'100%',
+  },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
@@ -39,6 +44,11 @@ const useStyles = makeStyles((theme) => ({
   heroButtons: {
     marginTop: theme.spacing(4),
   },
+  mainButton: {
+    height: '125%'
+
+  },
+  menu: {},
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
@@ -60,11 +70,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
+const cards = [1, 2, 3, 4];
 
 const App = () => {
 
   const classes = useStyles();
+  const handleClick = () => {
+
+  }
 
   return (
 
@@ -73,9 +86,18 @@ const App = () => {
         <AppBar position="relative">
           <Toolbar>
             <CarIcon className={classes.icon} />
-            <Typography variant="h6" color="inherit" noWrap>
+            <Typography className={classes.appName} variant="h6" color="inherit" noWrap>
               Carchain
             </Typography>
+            <div style={{ width: '100%' }}>
+              <Box 
+                display="flex"
+                justifyContent="flex-end"
+                p={1}
+                m={1}>
+                <BurgerMenu className={classes.menu} />
+              </Box>
+            </div>
           </Toolbar>
         </AppBar>
         <main>
@@ -91,14 +113,14 @@ const App = () => {
               <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary">
+                    <Button className={classes.mainButton} variant="contained" color="primary">
                       Main call to action
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button variant="outlined" color="primary">
+                    {/* <Button variant="outlined" color="primary">
                       Secondary action
-                    </Button>
+                    </Button> */}
                   </Grid>
                 </Grid>
               </div>
@@ -127,9 +149,9 @@ const App = () => {
                       <Button size="small" color="primary">
                         View
                       </Button>
-                      <Button size="small" color="primary">
+                      {/* <Button size="small" color="primary">
                         Edit
-                      </Button>
+                      </Button> */}
                     </CardActions>
                   </Card>
                 </Grid>
