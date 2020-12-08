@@ -52,10 +52,12 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+    
+    
   },
   card: {
     height: '100%',
-    display: 'flex',
+    display: 'flex',  
     flexDirection: 'column',
   },
   cardMedia: {
@@ -70,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4];
+const cards = [1, 2, 3, 4, 5, 6];
 
 const App = () => {
 
@@ -124,11 +126,12 @@ const App = () => {
               </div>
             </Container>
           </div>
+          {/* End hero unit */}
+          {/* Start cards unit */}
           <Container className={classes.cardGrid} maxWidth="md">
-            {/* End hero unit */}
             <Grid container spacing={4}>
               {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={4}>
+                <Grid item key={card} xs={12} sm={12} md={4} maxWidth="md" justify="center">
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
@@ -153,6 +156,8 @@ const App = () => {
               ))}
             </Grid>
           </Container>
+          {/* End cards unit */}
+
         </main>
         {/* Footer */}
         <footer className={classes.footer}>
