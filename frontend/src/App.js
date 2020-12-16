@@ -17,6 +17,9 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import 'fontsource-roboto';
 
+
+import Carousel from './components/Carousel/Carousel'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -82,6 +85,12 @@ const App = () => {
 
   }
 
+  const [handleOpen, setHandleOpen] = useState({ open: false });
+  const handleClick = () => {
+    setHandleOpen({ open: true });
+  };
+  const matches = useMediaQuery("(max-width:600px)");
+
   return (
 
       <React.Fragment>
@@ -128,7 +137,7 @@ const App = () => {
           </div>
           {/* End hero unit */}
           {/* Start cards unit */}
-          <Container className={classes.cardGrid} maxWidth="md">
+          {/* <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
               {cards.map((card) => (
                 <Grid item key={card} xs={12} sm={12} md={4} maxWidth="md" justify="center">
@@ -155,7 +164,18 @@ const App = () => {
                 </Grid>
               ))}
             </Grid>
-          </Container>
+          </Container> */}
+
+     
+      <div id="carousel">
+        <Button onClick={handleClick}>Open carousel</Button>
+        <Carousel
+          isMobile={matches}
+          handleOpen={handleOpen}
+          setHandleOpen={setHandleOpen}
+        />
+      </div>
+
           {/* End cards unit */}
 
         </main>
