@@ -1,24 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import CarIcon from '@material-ui/icons/DriveEta';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+// import Card from '@material-ui/core/Card';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import BurgerMenu from './components/Menu/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
 import 'fontsource-roboto';
 
 
-import Carousel from './components/Carousel/Carousel'
+// import Carousel from './components/Carousel/Carousel'
 
 function Copyright() {
   return (
@@ -73,9 +78,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  
 }));
 
-const cards = [1, 2, 3, 4, 5, 6];
+// const cards = [1, 2, 3, 4, 5, 6];
 
 const App = () => {
 
@@ -85,13 +91,27 @@ const App = () => {
 
   }
 
-  const [handleOpen, setHandleOpen] = useState({ open: false });
-  const handleClick = () => {
-    setHandleOpen({ open: true });
-  };
-  const matches = useMediaQuery("(max-width:600px)");
+  // const [handleOpen, setHandleOpen] = useState({ open: true });
+  // const handleCarouselClick = () => {
+  //   setHandleOpen({ open: true });
+  // };
+  const greyImage = "https://picsum.photos/300/200?grayscale"
+  const image = "https://picsum.photos/300/200"
+  const slides = [
+    (<img alt="" key={1} src={greyImage} />),
+    (<img alt="" key={2} src={image} />),
+    (<img alt="" key={3} src={greyImage} />),
+    (<img alt="" key={4} src={greyImage} />),
+    (<img alt="" key={5} src={image} />),
+    (<img alt="" key={6} src={greyImage} />),
+    (<img alt="" key={7} src={greyImage} />),
+    (<img alt="" key={8} src={image} />),
+    (<img alt="" key={9} src={greyImage} />),
+
+  ];
 
   return (
+
 
       <React.Fragment>
         <CssBaseline />
@@ -112,7 +132,7 @@ const App = () => {
             </div>
           </Toolbar>
         </AppBar>
-        <main>
+        <main className={classes.main}>
           {/* Hero unit */}
           <div className={classes.heroContent}>
             <Container maxWidth="sm">
@@ -167,14 +187,38 @@ const App = () => {
           </Container> */}
 
      
-      <div id="carousel">
-        <Button onClick={handleClick}>Open carousel</Button>
-        <Carousel
-          isMobile={matches}
-          handleOpen={handleOpen}
-          setHandleOpen={setHandleOpen}
-        />
-      </div>
+        <Container maxWidth="md">
+
+          <Carousel
+          
+            infinite
+            clickToChange
+            centered
+            slides={slides}
+            breakpoints={{
+              1000: { // these props will be applied when screen width is less than 1000px
+                slidesPerPage: 3,
+                clickToChange: false,
+                centered: false,
+                arrows: true,
+                infinite: false,
+              },
+              500: {
+                slidesPerPage: 1,
+                slidesPerScroll: 1,
+                clickToChange: false,
+                centered: true,
+                arrowLeft: (<MenuIcon className="icon-example" name="arrow-left" />),
+                arrowRight: (<MenuIcon className="icon-example" name="arrow-right" />),
+                animationSpeed: 2000,
+                infinite: false,
+              },
+            }}
+          />
+     
+     
+        </Container>
+      
 
           {/* End cards unit */}
 
@@ -182,10 +226,9 @@ const App = () => {
         {/* Footer */}
         <footer className={classes.footer}>
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+          <Copyright />
           </Typography>
          
-          <Copyright />
         </footer>
         {/* End footer */}
       </React.Fragment>
