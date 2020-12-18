@@ -10,7 +10,6 @@ import CarIcon from '@material-ui/icons/DriveEta';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import BurgerMenu from './components/Menu/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,8 +18,11 @@ import Link from '@material-ui/core/Link';
 
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import 'fontsource-roboto';
+import './App.scss'
 
 
 // import Carousel from './components/Carousel/Carousel'
@@ -78,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  images: {
+    padding: theme.spacing(6),
+ 
+  }
   
 }));
 
@@ -91,22 +97,19 @@ const App = () => {
 
   }
 
-  // const [handleOpen, setHandleOpen] = useState({ open: true });
-  // const handleCarouselClick = () => {
-  //   setHandleOpen({ open: true });
-  // };
+
   const greyImage = "https://picsum.photos/300/200?grayscale"
   const image = "https://picsum.photos/300/200"
   const slides = [
-    (<img alt="" key={1} src={greyImage} />),
-    (<img alt="" key={2} src={image} />),
-    (<img alt="" key={3} src={greyImage} />),
-    (<img alt="" key={4} src={greyImage} />),
-    (<img alt="" key={5} src={image} />),
-    (<img alt="" key={6} src={greyImage} />),
-    (<img alt="" key={7} src={greyImage} />),
-    (<img alt="" key={8} src={image} />),
-    (<img alt="" key={9} src={greyImage} />),
+    (<img className="classes.images" alt=""  key={1} src={image} />),
+    (<img className="classes.images" alt=""  key={2} src={image} />),
+    (<img className="classes.images" alt=""  key={3} src={image} />),
+    (<img className="classes.images" alt=""  key={4} src={image} />),
+    (<img className="classes.images" alt=""  key={5} src={image} />),
+    (<img className="classes.images" alt=""  key={6} src={image} />),
+    (<img className="classes.images" alt=""  key={7} src={image} />),
+    (<img className="classes.images" alt=""  key={8} src={image} />),
+    (<img className="classes.images" alt=""  key={9} src={image} />),
 
   ];
 
@@ -196,11 +199,22 @@ const App = () => {
             centered
             slides={slides}
             breakpoints={{
-              1000: { // these props will be applied when screen width is less than 1000px
+              5000: { // these props will be applied when screen width is less than 1000px
                 slidesPerPage: 3,
                 clickToChange: false,
                 centered: false,
                 arrows: true,
+                arrowLeft: (<ArrowBackIcon  name="arrow-left" />),
+                arrowRight: (<ArrowForwardIcon name="arrow-right" />),
+                infinite: false,
+              },
+              745: { // these props will be applied when screen width is less than 1000px
+                slidesPerPage: 3,
+                clickToChange: false,
+                centered: false,
+                arrows: true,
+                arrowLeft: (<ArrowBackIcon  name="arrow-left" />),
+                arrowRight: (<ArrowForwardIcon name="arrow-right" />),
                 infinite: false,
               },
               500: {
@@ -208,11 +222,13 @@ const App = () => {
                 slidesPerScroll: 1,
                 clickToChange: false,
                 centered: true,
-                arrowLeft: (<MenuIcon className="icon-example" name="arrow-left" />),
-                arrowRight: (<MenuIcon className="icon-example" name="arrow-right" />),
+                arrows: true,
+                arrowLeft: (<ArrowBackIcon  name="arrow-left" />),
+                arrowRight: (<ArrowForwardIcon name="arrow-right" />),
                 animationSpeed: 2000,
                 infinite: false,
               },
+             
             }}
           />
      
