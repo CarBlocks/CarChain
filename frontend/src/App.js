@@ -178,7 +178,7 @@ const App = () => {
                 arrows: true,
                 infinite: false,
               },
-              500: {
+              745: {
                 slidesPerPage: 1,
                 slidesPerScroll: 1,
                 clickToChange: false,
