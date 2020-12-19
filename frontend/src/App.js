@@ -197,7 +197,7 @@ const App = () => {
             centered
             slides={slides}
             breakpoints={{
-              1000: { // these props will be applied when screen width is less than 1000px
+              5000: { // these props will be applied when screen width is less than 1000px
                 slidesPerPage: 3,
                 clickToChange: false,
                 centered: false,
