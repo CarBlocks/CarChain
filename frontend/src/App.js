@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -86,15 +86,16 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
 
   const classes = useStyles();
+
+  /* todo 
   const handleClick = () => {
-    // todo 
 
-  }
 
-  // const [handleOpen, setHandleOpen] = useState({ open: true });
-  // const handleCarouselClick = () => {
-  //   setHandleOpen({ open: true });
-  // };
+   const [handleOpen, setHandleOpen] = useState({ open: true });
+   const handleCarouselClick = () => {
+     setHandleOpen({ open: true });
+   };*/
+
   const greyImage = "https://picsum.photos/300/200?grayscale"
   const image = "https://picsum.photos/300/200"
   const slides = [
