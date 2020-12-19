@@ -17,9 +17,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
+
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import 'fontsource-roboto';
 
 
@@ -157,37 +159,9 @@ const App = () => {
             </Container>
           </div>
           {/* End hero unit */}
-          {/* Start cards unit */}
-          {/* <Container className={classes.cardGrid} maxWidth="md">
-            <Grid container spacing={4}>
-              {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={12} md={4} maxWidth="md" justify="center">
-                  <Card className={classes.card}>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Heading
-                      </Typography>
-                      <Typography>
-                        This is a media card. You can use this section to describe the content.
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small" color="primary">
-                        View
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Container> */}
 
-     
+
+          {/* Start cards unit */}  
         <Container maxWidth="md">
 
           <Carousel
@@ -209,8 +183,8 @@ const App = () => {
                 slidesPerScroll: 1,
                 clickToChange: false,
                 centered: true,
-                arrowLeft: (<MenuIcon className="icon-example" name="arrow-left" />),
-                arrowRight: (<MenuIcon className="icon-example" name="arrow-right" />),
+                arrowLeft: (<ArrowBackIcon className="icon-example" name="arrow-left" />),
+                arrowRight: (<ArrowForwardIcon className="icon-example" name="arrow-right" />),
                 animationSpeed: 2000,
                 infinite: false,
               },
