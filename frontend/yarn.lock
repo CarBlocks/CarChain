@@ -7714,9 +7714,9 @@ minimatch@3.0.4, minimatch@^3.0.4, minimatch@~3.0.2:
     brace-expansion "^1.1.7"
 
 minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
+  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -9572,13 +9572,6 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
-
-react-alice-carousel@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-2.1.0.tgz#8a9b14c37a0b88d3c53218e6fab215028592e520"
-  integrity sha512-AprO4ndVhi9aYYZ4LhTiDT/1oSMikITYG5HsHrU8FKlFN74Ph7xzi8Gm/d3QtoaWbZ2dg+B+RZw0u7z0DdQk/g==
-  dependencies:
-    vanilla-swipe "^2.2.0"
 
 react-app-polyfill@^2.0.0:
   version "2.0.0"
@@ -11735,11 +11728,6 @@ value-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
   integrity sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==
-
-vanilla-swipe@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/vanilla-swipe/-/vanilla-swipe-2.3.0.tgz#a2cd466aabed00c1e8abd7b69a86940bf9319516"
-  integrity sha512-4m8vZ/kckRG7RQUYNg+0lGILMHT08KEgwePlRLzediDSu7aQFBLB0V2n36vUmYqq5CVWASOzZ8zpnQFZXIbHbA==
 
 vary@~1.1.2:
   version "1.1.2"
